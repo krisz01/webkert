@@ -1,0 +1,44 @@
+<h2>Premier League</h2>
+<table>
+    <tr>
+        <th>Helyezés</th>
+        <th>Név</th>
+        <th>Összes meccs</th>
+        <th>Győzelem</th>
+        <th>Döntetlen</th>
+        <th>Vereség</th>
+        <th>Lőtt gól</th>
+        <th>Kapott gól</th>
+        <th>Gól különbség</th>
+        <th>Pontszám</th>
+    </tr>
+        <tr *ngFor="let team of teams; index as i">
+            <td>{{i+1}}</td>
+            <td>{{team.name}}</td>
+            <td>{{team.win + team.draw + team.lose}}</td>
+            <td>{{team.win}}</td>
+            <td>{{team.draw}}</td>
+            <td>{{team.lose}}</td>
+            <td>{{team.goalScored}}</td>
+            <td>{{team.goalConceed}}</td>
+            <td>{{team.goalScored-team.goalConceed}}</td>
+            <td>{{team.points}}</td>
+            <td>
+                <button routerLink="/premierleagueteams/detail/{{team.id}}">Módosítás</button>
+                <button (click)="deleteTeam(team.id)">Törlés</button>
+            </td>
+        </tr>
+</table>
+<button mat-raised-button (click)="viewAddTeam()">Csapat hozzáadása</button>
+<div *ngIf="addteam">
+    <form [formGroup]="teamsForm" (ngSubmit)="AddTeam()">
+        <mat-form-field><mat-label for="teamname">Csapat neve: </mat-label><input matInput type="text" formControlName="name"></mat-form-field>
+        <mat-form-field><mat-label for="teamwin">Győzelmek száma: </mat-label><input matInput type="number" formControlName="win"></mat-form-field>
+        <mat-form-field><mat-label for="teamlose">Vereségek száma: </mat-label><input matInput type="number" formControlName="lose"></mat-form-field>
+        <mat-form-field><mat-label for="teamdraw">Döntetlenek száma: </mat-label><input matInput type="number" formControlName="draw"></mat-form-field>
+        <mat-form-field><mat-label for="teamscored">Lőtt gólok száma: </mat-label><input matInput type="number" formControlName="goalScored"></mat-form-field>
+        <mat-form-field><mat-label for="teaconceed">Kapott gólok száma: </mat-label><input matInput type="number" formControlName="goalConceed"></mat-form-field>
+        <mat-form-field><mat-label for="teampoints">Pontok száma: </mat-label><input matInput type="number" formControlName="points"></mat-form-field>
+        <span><button mat-raised-button type="submit">Hozzáadás</button></span>
+    </form>
+</div>

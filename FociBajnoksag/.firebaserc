@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "focibajnoksag-6736c": {
+      "hosting": {
+        "FociBajnoksag": [
+          "focibajnoksag-6736c"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "focibajnoksag-6736c"
+  }
+}

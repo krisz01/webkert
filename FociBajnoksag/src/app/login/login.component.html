@@ -1,0 +1,9 @@
+<h2>Bejelentkezés</h2>
+<div>
+    <mat-form-field><mat-label for="email">Email cím: </mat-label><input matInput type="text" [formControl]="email"></mat-form-field>
+    <mat-form-field><mat-label for="password">Jelszó: </mat-label><input matInput type="password" [formControl]="password"></mat-form-field>
+    <span>
+        <button mat-raised-button (click)="login()">Bejelentkezés</button>
+        <button mat-raised-button [routerLink]="'/register'">Regisztáció</button>
+    </span>
+</div>

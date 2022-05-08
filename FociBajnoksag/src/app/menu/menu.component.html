@@ -1,0 +1,34 @@
+<mat-nav-list>
+    <a mat-list-item routerLink="/login" (click)="close()" *ngIf="!loggedInUser">
+        <mat-icon>login</mat-icon>
+        <span>Bejelentkezés</span>
+    </a>
+    <a mat-list-item routerLink="/login" (click)="close(true)" *ngIf="loggedInUser">
+        <mat-icon>logout</mat-icon>
+        <span>Kijelentkezés</span>
+    </a>
+    <a mat-list-item routerLink="/register" (click)="close()" *ngIf="!loggedInUser">
+        <mat-icon>app_registration</mat-icon>
+        <span>Regisztráció</span>
+    </a>
+    <a mat-list-item routerLink="/laligateams" (click)="close()" *ngIf="loggedInUser">
+        <mat-icon>sports_soccer</mat-icon>
+        <span>Laliga</span>
+    </a>
+    <a mat-list-item routerLink="/seriaateams" (click)="close()" *ngIf="loggedInUser">
+        <mat-icon>sports_soccer</mat-icon>
+        <span>Seria A</span>
+    </a>
+    <a mat-list-item routerLink="/premierleagueteams" (click)="close()" *ngIf="loggedInUser">
+        <mat-icon>sports_soccer</mat-icon>
+        <span>Premier League</span>
+    </a>
+    <a mat-list-item routerLink="/ligue1teams" (click)="close()" *ngIf="loggedInUser">
+        <mat-icon>sports_soccer</mat-icon>
+        <span>Ligue </span>
+    </a>
+    <a mat-list-item routerLink="/bundesligateams" (click)="close()" *ngIf="loggedInUser">
+        <mat-icon>sports_soccer</mat-icon>
+        <span>Bundesliga</span>
+    </a>
+</mat-nav-list>
